@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>index</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{--bg:#f5f7fa;--card:#ffffff;--accent:#0b5bd7;--text:#0b2436}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:20px}
+    header{max-width:1000px;margin:0 auto 18px}
+    h1{color:var(--accent);margin:6px 0}
+    main{max-width:1000px;margin:0 auto}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(3,17,34,0.06);margin-bottom:18px}
+    table{border-collapse:collapse;width:100%}
+    th,td{border:1px solid #dfe7ef;padding:8px;text-align:center}
+    th{background:#f0f6ff}
+    pre{background:#0b2b4a;color:#e6f6ff;padding:12px;border-radius:6px;overflow:auto}
+    .kmap{display:grid;grid-template-columns:80px repeat(4,80px);gap:6px;align-items:center}
+    .kcell{width:80px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:6px;background:#fff;border:1px solid #e6eef8;font-weight:700}
+    .klabel{font-weight:700;color:#4b6b8a}
+    .group{box-shadow:inset 0 0 0 4px rgba(11,91,215,0.12)}
+    .group2{box-shadow:inset 0 0 0 4px rgba(0,160,120,0.12)}
+    .group3{box-shadow:inset 0 0 0 4px rgba(230,120,0,0.12)}
+    .small{font-size:14px;color:#425a70}
+    svg{max-width:100%;height:auto}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Etapa de recuperación Diciembre</h1>
+  <div class="small">Pagina hecha por: Ignacio Aguilar
+Curso: 5to 4ta
+Profesor: Caseres Marcos David
+Materia: Electronica
+Tema: Resolver ejercicio</div>
+</header>
+
+<main>
+  <section class="card" id="ejercicio">
+    <h2>Ejercicio</h2>
+    <p>S= 𝐴̅𝐵̅𝐶̅𝐷̅ + AB + 𝐴̅𝐵̅D + 𝐴̅𝐵̅C𝐷̅ + 𝐴̅B𝐶̅𝐷̅ + 𝐴̅BCD + A𝐵̅𝐶̅D + A𝐵̅CD</p>
+     <p>Tarea:</p>
+    <ol>
+      <li> a) realizar el circuito con compuertas lógicas, sin simplificar, (puede tener esto
+avanzado no es necesario que en el video lo haga ya que en esta etapa tomaría
+mucho tiempo y debe ser un video corto). </li>
+</li> b) simplificar por método de Karnaugh (paso por paso) explicando puntos a tener
+en cuenta, también algo de teoría (por ejemplo, que es un toroide, lo cual ayuda
+a comprender como usar las esquinas o bordes)</li>
+      <li> c) realizar el circuito con compuertas lógicas ya simplificado demostrando la
+eficacia del método. <li>
+  </section>
+
+  <section class="card" id="tabla">
+    <h2>1) Tabla de verdad</h2>
+    <p>Nos fijamos en nuestra funcion logica, cuando el valor este negado ponemos un 0 debajo y cuando el valor sea positivo ponemos un uno debajo</p>
+    <table>
+      <thead>
+        <tr><th>A</th><th>B</th><th>C</th><th>D</th><th>F</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+
+        <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+
+        <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+
+        <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card" id="kmap">
+  <h2>2) Mapa de Karnaugh</h2>
+
+  <p> Para resolver el mapa de Karnaugh debemos hacer lo siguiente: </p>
+
+  <ol>
+    <li>Dibujamos la cuadrícula:hacemos una tabla 4×4 poniendo arriba a la izquierda AB/CD, la fila de arriba representa los valores de ab y los de abajo los valores de cd</li>
+
+    <li> para resolver el mapa de karnaugh, nos tenemos que fijar en nuestra tabla de verdad y anoto en el mapa si el resultado es un 1 o un 0, por ejemplo: Cuando AyB sean 1 y 0, CyD sean 1y0, anoto un 1 </li>
+
+<li>para agrupar, encerramos los 1 en grupos de 2,4,8 o 16, podemos agrupar de manera horizontal, vertical y diagonal </li>
+
+  <p>nos debe de quedar algo asi</p>
+
+  <table>
+    <tr><th>AB/CD</th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
+    <tr><th>00</th><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><th>01</th><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><th>11</th><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><th>10</th><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+  </table>
+
+
+</section>
+
+  <section class="card" id="agrup">
+  <h2>3) Agrupamientos (paso a paso - explicado de forma sencilla)</h2>
+  <p>Voy a explicar cómo pasar de cada grupo dibujado  a su término algebraico, paso a paso:</p>
+  <ol>
+    <li><strong>Grupo A — fila AB=00 (4 celdas):</strong>
+      <br>En este grupo A y B no cambian: A=0 y B=0. Las variables que cambian son C y D (porque el grupo cubre columnas 00,01,11,10). Por eso el término que queda es <code>A̅ B̅</code> (solo A y B, sin C ni D).</li>
+
+    <li><strong>Grupo B — fila AB=11 (4 celdas):</strong>
+      <br>A=1, B=1 dentro del grupo; C y D cambian. Por eso el término es <code>A B</code>.</li>
+
+    <li><strong>Grupo C — columna CD=11 (4 celdas):</strong>
+      <br>En ese grupo C=1 y D=1; A y B cambian. Por eso el término es <code>C D</code>.</li>
+
+    <li><strong>Grupo D — par en CD=00 (dos celdas: AB=01 y AB=11):</strong>
+      <br>Fijate qué valores se mantienen iguales en esas dos casillas: en ambas B=1 (porque AB=01 y AB=11 tienen B=1), mientras que A cambia (0→1). En la columna CD=00 se tiene C=0 y D=0 (fijos). Por eso el término es <code>B C̅ D̅</code> (B positivo, C y D negados).</li>
+
+    <li><strong>Grupo E — par en CD=01 (dos celdas: AB=00 y AB=10):</strong>
+      <br>A cambia entre 0 y 1 (porque AB=00 y AB=10), pero B=0 en ambas; en CD=01 C=0 y D=1. Por eso el término es <code>B̅ C̅ D</code>.</li>
+  </ol>
+
+</section>
+
+  <section class="card" id="simpl">
+    <h2>4) Función mínima (resultado)</h2>
+    <p>Sumando los términos obtenidos en los agrupamientos:</p>
+    <pre>F = A̅ B̅ + A B + C D + B C̅ D̅ + B̅ C̅ D</pre>
+  </section>
+
+  <section class="card" id="punto-d">
+  <h2> Compuerta Final </h2>
+<img src="1.jpg" width="500" height="500">
+  </section>
+</main>
+
+</body>
+</html>

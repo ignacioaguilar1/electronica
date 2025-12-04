@@ -62,23 +62,23 @@ eficacia del método. <li>
       <tbody>
         <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
         <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-        <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
         <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
 
         <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
         <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-        <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
         <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 
         <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
         <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
-        <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
         <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
 
-        <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-        <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-        <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
         <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
       </tbody>
     </table>
   </section>
@@ -103,7 +103,7 @@ eficacia del método. <li>
     <tr><th>00</th><td>1</td><td>1</td><td>1</td><td>1</td></tr>
     <tr><th>01</th><td>1</td><td>0</td><td>1</td><td>0</td></tr>
     <tr><th>11</th><td>1</td><td>1</td><td>1</td><td>1</td></tr>
-    <tr><th>10</th><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><th>10</th><td>0</td><td>1</td><td>0</td><td>0</td></tr>
   </table>
 
 
@@ -112,20 +112,7 @@ eficacia del método. <li>
   <section class="card" id="agrup">
   <h2>3) Agrupamientos Y SIMPLIFICACION</h2>
   <ol>
-    <li><strong>Grupo A — fila AB=00 (4 celdas):</strong>
-      <br>En este grupo A y B no cambian: A=0 y B=0. Las variables que cambian son C y D (porque el grupo cubre columnas 00,01,11,10). Por eso el término que queda es <code>A̅ B̅</code> (solo A y B, sin C ni D).</li>
-
-    <li><strong>Grupo B — fila AB=11 (4 celdas):</strong>
-      <br>A=1, B=1 dentro del grupo; C y D cambian. Por eso el término es <code>A B</code>.</li>
-
-    <li><strong>Grupo C — columna CD=11 (4 celdas):</strong>
-      <br>En ese grupo C=1 y D=1; A y B cambian. Por eso el término es <code>C D</code>.</li>
-
-    <li><strong>Grupo D — par en CD=00 (dos celdas: AB=01 y AB=11):</strong>
-      <br>Fijate qué valores se mantienen iguales en esas dos casillas: en ambas B=1 (porque AB=01 y AB=11 tienen B=1), mientras que A cambia (0→1). En la columna CD=00 se tiene C=0 y D=0 (fijos). Por eso el término es <code>B C̅ D̅</code> (B positivo, C y D negados).</li>
-
-    <li><strong>Grupo E — par en CD=01 (dos celdas: AB=00 y AB=10):</strong>
-      <br>A cambia entre 0 y 1 (porque AB=00 y AB=10), pero B=0 en ambas; en CD=01 C=0 y D=1. Por eso el término es <code>B̅ C̅ D</code>.</li>
+    <li> </li>
   </ol>
 
 </section>
@@ -133,7 +120,7 @@ eficacia del método. <li>
   <section class="card" id="simpl">
     <h2>4) Función mínima (resultado)</h2>
     <p>Sumando los términos obtenidos en los agrupamientos:</p>
-    <pre>F = A̅ B̅ + A B + C D + B C̅ D̅ + B̅ C̅ D</pre>
+    <pre>S =  BC̅D̅ +A̅B̅ + CD + AB + AD</pre>
   </section>
 
   <section class="card" id="punto-d">
@@ -144,5 +131,6 @@ eficacia del método. <li>
 
 </body>
 </html>
+
 
 
